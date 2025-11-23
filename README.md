@@ -8,14 +8,14 @@ Rust rewrite of [curl_cffi](https://github.com/yifeikong/curl_cffi), demonstrati
 
 ## Features to be implemented
 
-- Type-safe curl wrapper
-- Synchronous API
-- Asynchronous API (tokio)
-- WebSocket support (placeholder)
-- Python bindings via PyO3
-- Browser fingerprinting support (via libcurl-impersonate)
-- Zero-copy I/O where possible
-- Comprehensive benchmarks
+- [ ] Type-safe curl wrapper
+- [ ] Synchronous API
+- [ ] Asynchronous API (tokio)
+- [ ] WebSocket support (placeholder)
+- [ ] Python bindings via PyO3
+- [ ] Browser fingerprinting support (via libcurl-impersonate)
+- [ ] Zero-copy I/O where possible
+- [ ] Comprehensive benchmarks
 
 ## Quick Start
 
