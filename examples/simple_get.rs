@@ -1,6 +1,6 @@
 //! Simple GET request example
 
-use curl_cffi_rs::{get, Request};
+use hyprcurl::{get, Request};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Simple GET Request Examples ===\n");

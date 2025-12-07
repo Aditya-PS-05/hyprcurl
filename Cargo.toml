@@ -1,10 +1,10 @@
 [package]
-name = "curl-cffi-rs"
+name = "hyprcurl"
 version = "0.1.0"
 edition = "2021"
 authors = ["Aditya Pratap Singh <adipras1407@gmail.com>"]
-description = "A high-performance Rust implementation of curl_cffi with browser fingerprinting support"
-documentation = "https://docs.rs/curl-cffi-rs"
+description = "A high-performance Rust HTTP client with browser impersonation and TLS fingerprinting"
+documentation = "https://docs.rs/hyprcurl"
 repository = "https://github.com/Aditya-PS-05/hyprcurl"
 readme = "README.md"
 license = "MIT OR Apache-2.0"
@@ -17,7 +17,7 @@ all-features = false
 default-target = "x86_64-unknown-linux-gnu"
 
 [lib]
-name = "curl_cffi_rs"
+name = "hyprcurl"
 crate-type = ["rlib", "cdylib"]  # cdylib for Python bindings
 
 [dependencies]

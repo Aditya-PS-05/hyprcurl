@@ -1,8 +1,8 @@
-//! Integration tests for curl-cffi-rs
+//! Integration tests for hyprcurl
 //!
 //! These tests make actual HTTP requests to httpbin.org
 
-use curl_cffi_rs::{get, post, Browser, Curl, Request};
+use hyprcurl::{get, post, Browser, Curl, Request};
 
 #[test]
 fn test_simple_get_request() {
@@ -252,7 +252,7 @@ fn test_timeout_works() {
         .expect("Failed to set URL");
 
     // Set 1 second timeout for a 10 second delay - should timeout
-    curl.setopt_long(curl_cffi_rs::CurlOpt::Timeout, 1)
+    curl.setopt_long(hyprcurl::CurlOpt::Timeout, 1)
         .expect("Failed to set timeout");
 
     let mut buffer = Vec::new();

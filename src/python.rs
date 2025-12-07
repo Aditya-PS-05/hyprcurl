@@ -207,7 +207,7 @@ fn post(
 
 /// Initialize the Python module
 #[pymodule]
-fn curl_cffi_rs(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn hyprcurl(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<Curl>()?;
     m.add_function(wrap_pyfunction!(get, m)?)?;
     m.add_function(wrap_pyfunction!(post, m)?)?;

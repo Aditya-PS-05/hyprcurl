@@ -2,7 +2,7 @@
 //!
 //! This example shows how to use HTTP and SOCKS proxies
 
-use curl_cffi_rs::{Browser, Request};
+use hyprcurl::{Browser, Request};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Proxy Usage Examples ===\n");

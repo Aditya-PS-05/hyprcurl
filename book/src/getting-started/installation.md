@@ -72,11 +72,11 @@ Windows support is experimental. See the [libcurl-impersonate documentation](htt
 Create a simple test program to verify everything works:
 
 ```rust
-use curl_cffi_rs::Curl;
+use hyprcurl::Curl;
 
 fn main() {
     let curl = Curl::new().expect("Failed to initialize curl");
-    println!("curl-cffi-rs is working! Version: {}", curl_cffi_rs::version());
+    println!("curl-cffi-rs is working! Version: {}", hyprcurl::version());
 }
 ```
 

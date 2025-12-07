@@ -3,7 +3,7 @@
 //! This example demonstrates how to impersonate different browsers
 //! to avoid bot detection.
 
-use curl_cffi_rs::{Browser, Request};
+use hyprcurl::{Browser, Request};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Browser Impersonation Examples ===\n");

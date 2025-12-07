@@ -22,7 +22,7 @@ Rust rewrite of [curl_cffi](https://github.com/yifeikong/curl_cffi), demonstrati
 ### Rust Library
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
+use hyprcurl::{Curl, CurlError};
 
 fn main() -> Result<(), CurlError> {
     let mut curl = Curl::new()?;
@@ -40,7 +40,7 @@ fn main() -> Result<(), CurlError> {
 ### Async Rust
 
 ```rust
-use curl_cffi_rs::{AsyncCurl, Curl};
+use hyprcurl::{AsyncCurl, Curl};
 
 #[tokio::main]
 async fn main() {
@@ -57,14 +57,14 @@ async fn main() {
 ### Python Bindings
 
 ```python
-import curl_cffi_rs
+import hyprcurl
 
 # Simple request
-response = curl_cffi_rs.get("https://httpbin.org/get")
+response = hyprcurl.get("https://httpbin.org/get")
 print(response)
 
 # Advanced usage
-curl = curl_cffi_rs.Curl()
+curl = hyprcurl.Curl()
 curl.set_url("https://httpbin.org/get")
 curl.add_header("User-Agent: MyApp/1.0")
 curl.impersonate("chrome110", True)

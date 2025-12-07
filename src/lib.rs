@@ -11,7 +11,7 @@
 //! ## Example
 //!
 //! ```no_run
-//! use curl_cffi_rs::{Request, Browser};
+//! use hyprcurl::{Request, Browser};
 //!
 //! // Simple GET
 //! let response = Request::get("https://httpbin.org/get").send().unwrap();
@@ -49,7 +49,7 @@ pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 ///
 /// # Examples
 /// ```no_run
-/// use curl_cffi_rs::{Request, Browser};
+/// use hyprcurl::{Request, Browser};
 ///
 /// // Simple GET
 /// let response = Request::get("https://httpbin.org/get").send().unwrap();
@@ -144,7 +144,7 @@ impl Request {
 ///
 /// # Examples
 /// ```no_run
-/// use curl_cffi_rs::get;
+/// use hyprcurl::get;
 ///
 /// let response = get("https://httpbin.org/get").unwrap();
 /// println!("{}", String::from_utf8_lossy(&response));
@@ -159,7 +159,7 @@ pub fn get(url: &str) -> Result<Vec<u8>> {
 ///
 /// # Examples
 /// ```no_run
-/// use curl_cffi_rs::post;
+/// use hyprcurl::post;
 ///
 /// let data = r#"{"key": "value"}"#;
 /// let response = post("https://httpbin.org/post", data).unwrap();

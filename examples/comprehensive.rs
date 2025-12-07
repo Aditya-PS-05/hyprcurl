@@ -1,6 +1,6 @@
 //! Comprehensive example showing all features
 
-use curl_cffi_rs::{Browser, Curl, Request};
+use hyprcurl::{Browser, Curl, Request};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Comprehensive curl-cffi-rs Examples ===\n");
@@ -87,7 +87,7 @@ fn low_level_api() -> Result<(), Box<dyn std::error::Error>> {
     curl.set_browser_impersonation(Browser::ChromeLatest)?;
 
     // Set timeout
-    curl.setopt_long(curl_cffi_rs::CurlOpt::Timeout, 30)?;
+    curl.setopt_long(hyprcurl::CurlOpt::Timeout, 30)?;
 
     // Perform request
     let mut buffer = Vec::new();

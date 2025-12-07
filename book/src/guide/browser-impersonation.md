@@ -17,7 +17,7 @@ curl-cffi-rs uses libcurl-impersonate to mimic real browsers, making your reques
 curl-cffi-rs supports impersonating various browsers:
 
 ```rust
-use curl_cffi_rs::types::Browser;
+use hyprcurl::types::Browser;
 
 // Chrome versions
 Browser::Chrome99
@@ -56,8 +56,8 @@ Browser::SafariIOS18_1_1
 ### Impersonating Chrome
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
-use curl_cffi_rs::types::Browser;
+use hyprcurl::{Curl, CurlError};
+use hyprcurl::types::Browser;
 
 fn main() -> Result<(), CurlError> {
     let mut curl = Curl::new()?;
@@ -92,7 +92,7 @@ curl.impersonate(Browser::Edge101)?;
 You can verify that impersonation is working by checking your TLS fingerprint:
 
 ```rust
-use curl_cffi_rs::{Curl, types::Browser};
+use hyprcurl::{Curl, types::Browser};
 
 fn test_fingerprint(browser: Browser) -> Result<(), CurlError> {
     let mut curl = Curl::new()?;
@@ -157,8 +157,8 @@ println!("HTTP Version: {}", http_version);
 Here's a complete example scraping a protected website:
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
-use curl_cffi_rs::types::Browser;
+use hyprcurl::{Curl, CurlError};
+use hyprcurl::types::Browser;
 
 fn scrape_protected_site(url: &str) -> Result<String, CurlError> {
     let mut curl = Curl::new()?;

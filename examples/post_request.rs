@@ -1,6 +1,6 @@
 //! POST request example
 
-use curl_cffi_rs::{post, Browser, Request};
+use hyprcurl::{post, Browser, Request};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== POST Request Examples ===\n");

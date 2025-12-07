@@ -7,7 +7,7 @@ Let's make your first HTTP request with curl-cffi-rs!
 Here's the simplest way to fetch a webpage:
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
+use hyprcurl::{Curl, CurlError};
 
 fn main() -> Result<(), CurlError> {
     // Create a new Curl instance
@@ -35,7 +35,7 @@ fn main() -> Result<(), CurlError> {
 Sending POST data is just as easy:
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
+use hyprcurl::{Curl, CurlError};
 
 fn main() -> Result<(), CurlError> {
     let mut curl = Curl::new()?;
@@ -57,7 +57,7 @@ fn main() -> Result<(), CurlError> {
 Custom headers are common for API requests:
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
+use hyprcurl::{Curl, CurlError};
 
 fn main() -> Result<(), CurlError> {
     let mut curl = Curl::new()?;
@@ -80,8 +80,8 @@ fn main() -> Result<(), CurlError> {
 The magic feature - impersonate a real browser:
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
-use curl_cffi_rs::types::Browser;
+use hyprcurl::{Curl, CurlError};
+use hyprcurl::types::Browser;
 
 fn main() -> Result<(), CurlError> {
     let mut curl = Curl::new()?;
@@ -104,7 +104,7 @@ fn main() -> Result<(), CurlError> {
 You can extract metadata about the response:
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
+use hyprcurl::{Curl, CurlError};
 
 fn main() -> Result<(), CurlError> {
     let mut curl = Curl::new()?;
@@ -130,7 +130,7 @@ fn main() -> Result<(), CurlError> {
 Always handle errors properly:
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
+use hyprcurl::{Curl, CurlError};
 
 fn fetch_url(url: &str) -> Result<String, CurlError> {
     let mut curl = Curl::new()?;

@@ -23,11 +23,11 @@ from curl_cffi.requests import Session
 # Try to import Rust version (if built)
 try:
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'target', 'release'))
-    import curl_cffi_rs as rust_curl
+    import hyprcurl as rust_curl
     RUST_AVAILABLE = True
 except ImportError:
     RUST_AVAILABLE = False
-    print("Warning: Rust curl_cffi_rs not available. Build with: cargo build --release --features python")
+    print("Warning: Rust hyprcurl not available. Build with: cargo build --release --features python")
 
 results = []
 

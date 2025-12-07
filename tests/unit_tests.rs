@@ -1,6 +1,6 @@
 //! Unit tests for curl-cffi-rs
 
-use curl_cffi_rs::{Browser, Curl, CurlOpt};
+use hyprcurl::{Browser, Curl, CurlOpt};
 
 #[test]
 fn test_curl_initialization() {
@@ -10,7 +10,7 @@ fn test_curl_initialization() {
 
 #[test]
 fn test_version() {
-    let version = curl_cffi_rs::version();
+    let version = hyprcurl::version();
     assert!(
         version.contains("curl") || version.contains("libcurl"),
         "Version string should contain 'curl' or 'libcurl'"

@@ -175,7 +175,7 @@ impl Curl {
     ///
     /// # Examples
     /// ```no_run
-    /// # use curl_cffi_rs::Curl;
+    /// # use hyprcurl::Curl;
     /// let mut curl = Curl::new().unwrap();
     /// curl.set_proxy("http://localhost:3128").unwrap();
     /// curl.set_proxy("socks5://localhost:1080").unwrap();
@@ -188,7 +188,7 @@ impl Curl {
     ///
     /// # Examples
     /// ```no_run
-    /// # use curl_cffi_rs::Curl;
+    /// # use hyprcurl::Curl;
     /// let mut curl = Curl::new().unwrap();
     /// curl.set_proxy_with_auth("http://localhost:3128", "user", "pass").unwrap();
     /// ```
@@ -434,8 +434,8 @@ impl Curl {
     ///
     /// # Examples
     /// ```
-    /// use curl_cffi_rs::curl::Curl;
-    /// use curl_cffi_rs::types::Browser;
+    /// use hyprcurl::curl::Curl;
+    /// use hyprcurl::types::Browser;
     ///
     /// let mut curl = Curl::new().unwrap();
     /// // Impersonate Chrome 120

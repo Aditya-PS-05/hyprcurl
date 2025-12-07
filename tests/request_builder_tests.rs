@@ -1,6 +1,6 @@
 //! Tests for the Request builder API
 
-use curl_cffi_rs::{Browser, Request};
+use hyprcurl::{Browser, Request};
 
 #[test]
 fn test_request_builder_simple_get() {

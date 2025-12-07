@@ -9,7 +9,7 @@ This chapter covers common patterns and configurations for curl-cffi-rs.
 Set timeouts to prevent requests from hanging:
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
+use hyprcurl::{Curl, CurlError};
 
 fn main() -> Result<(), CurlError> {
     let mut curl = Curl::new()?;
@@ -78,7 +78,7 @@ curl.set_post_fields(r#"{"name": "John"}"#)?;
 ### PUT Request
 
 ```rust
-use curl_cffi_rs::types::CurlOpt;
+use hyprcurl::types::CurlOpt;
 
 let mut curl = Curl::new()?;
 curl.set_url("https://api.example.com/users/1")?;
@@ -154,7 +154,7 @@ curl.perform(&mut response2)?;
 ### API Client with Authentication
 
 ```rust
-use curl_cffi_rs::{Curl, CurlError};
+use hyprcurl::{Curl, CurlError};
 
 struct ApiClient {
     base_url: String,

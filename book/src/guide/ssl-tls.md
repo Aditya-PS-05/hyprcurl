@@ -65,7 +65,7 @@ curl.set_ssl_key_password("password")?;
 ### Specifying TLS Version
 
 ```rust
-use curl_cffi_rs::types::SslVersion;
+use hyprcurl::types::SslVersion;
 
 // Use TLS 1.2 or higher (recommended)
 curl.set_ssl_version(SslVersion::TLSv1_2)?;
@@ -217,7 +217,7 @@ match curl.perform(&mut response) {
 When using browser impersonation, SSL/TLS characteristics are automatically configured:
 
 ```rust
-use curl_cffi_rs::types::Browser;
+use hyprcurl::types::Browser;
 
 let mut curl = Curl::new()?;
 
