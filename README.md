@@ -115,3 +115,50 @@ cargo bench
 ```bash
 python benchmarks/python_vs_rust_bench.py
 ```
+
+## Documentation
+
+This project includes comprehensive documentation in the form of a book (similar to the Rust Book).
+
+### Building the Documentation
+
+To build and view the documentation:
+
+```bash
+# Build the book
+mdbook build book
+
+# Serve the book locally and open in browser
+mdbook serve book --open
+
+# The book will be available at http://localhost:3000
+```
+
+### Installing mdBook
+
+If you don't have mdBook installed:
+
+```bash
+cargo install mdbook
+```
+
+### API Documentation
+
+To generate and view the API documentation:
+
+```bash
+# Generate API docs for the library
+cargo doc --no-deps --open
+
+# Generate docs with all features enabled
+cargo doc --all-features --open
+```
+
+The documentation covers:
+- Getting started guides
+- Browser impersonation
+- SSL/TLS configuration
+- Async/await usage
+- WebSocket support
+- Python bindings
+- Complete API reference
