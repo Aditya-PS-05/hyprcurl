@@ -71,7 +71,7 @@ impl CurlError {
     /// Get the curl error code if available
     pub fn code(&self) -> Option<u32> {
         match self {
-            CurlError::CurlCode { code, .. } => Some(*code),
+            CurlError::CurlCode { code, .. } => u32::try_from(*code).ok(),
             CurlError::MultiError { code, .. } => Some(*code as u32),
             _ => None,
         }

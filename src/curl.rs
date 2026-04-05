@@ -288,6 +288,55 @@ impl Curl {
         Ok(())
     }
 
+    pub fn perform_with_headers(
+        &mut self,
+        body: &mut Vec<u8>,
+        headers: &mut Vec<String>,
+    ) -> Result<()> {
+        use std::os::raw::c_void;
+
+        body.clear();
+        headers.clear();
+
+        unsafe {
+            extern "C" fn header_func(
+                ptr: *mut c_char,
+                size: usize,
+                nmemb: usize,
+                userdata: *mut c_void,
+            ) -> usize {
+                let total_size = size * nmemb;
+                let headers = unsafe { &mut *(userdata as *mut Vec<String>) };
+
+                let header_line =
+                    unsafe { std::slice::from_raw_parts(ptr as *const u8, total_size) };
+
+                if let Ok(s) = std::str::from_utf8(header_line) {
+                    let trimmed = s.trim();
+                    if !trimmed.is_empty() {
+                        headers.push(trimmed.to_string());
+                    }
+                }
+                total_size
+            }
+
+            curl_sys::curl_easy_setopt(
+                self.handle,
+                curl_sys::CURLOPT_HEADERFUNCTION,
+                header_func as *const c_void,
+            );
+            curl_sys::curl_easy_setopt(
+                self.handle,
+                curl_sys::CURLOPT_HEADERDATA,
+                headers as *mut Vec<String> as *mut c_void,
+            );
+
+            self.perform(body)?;
+        }
+
+        Ok(())
+    }
+
     /// Get response code
     pub fn response_code(&self) -> Result<i64> {
         let mut code: i64 = 0;
